@@ -3,14 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <title>Irayna Visual Editor</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: linear-gradient(to bottom right, #e6f7ff, #ffffff);
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      margin: 0;
+      padding: 10px;
+      background-color: #0d47a1;
+      color: white;
+    }
+    #toolbar {
+      padding: 10px;
+      background-color: #f0f0f0;
+      border-bottom: 1px solid #ccc;
+    }
+    button {
+      margin-right: 8px;
+      padding: 6px 12px;
+      border: 1px solid #007bff;
+      background-color: #2196f3;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1976d2;
+    }
+    #graphCanvas {
+      display: block;
+      width: 100%;
+      height: 60vh;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+    #statusPanel {
+      height: 30vh;
+      overflow-y: auto;
+      background: #fafafa;
+      border-top: 1px solid #ccc;
+      padding: 10px;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
   <h1>Irayna Visual Editor</h1>
-  <button id="addNodeBtn">Add Node</button>
-  <button id="addEdgeBtn">Add Edge</button>
-  <button id="shareDataBtn">Share Data</button>
-  <button id="runBtn">Run</button>
-  <canvas id="graphCanvas" width="800" height="600" style="border:1px solid #000"></canvas>
+  <div id="toolbar">
+    <button onclick="addNode()">Add Node</button>
+    <button onclick="addEdge()">Add Edge</button>
+    <button onclick="shareData()">Share Data</button>
+    <button onclick="runGraph()">Run</button>
+  </div>
+  <canvas id="graphCanvas" width="800" height="400"></canvas>
+  <div id="statusPanel"></div>
   <script src="app.js"></script>
 </body>
 </html>
