@@ -179,7 +179,8 @@ canvas.addEventListener('mouseup', () => {
 });
 
 // WebSocket
-const socket = new WebSocket('ws://' + location.hostname + ':3000');
+const backendHost = location.hostname.replace(/-\d+$/, '-3000');
+const socket = new WebSocket('ws://' + backendHost);
 
 socket.addEventListener('open', () => {
   appendStatus('Connected to runtime');
